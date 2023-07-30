@@ -16,30 +16,16 @@ total= []
 for i in range(nr_letters):
     random_item = random.choice(letters)
     total.append(random_item)
-
-
 for i in range(nr_symbols):
     random_item = random.choice(symbols)
     total.append(random_item)
-
-
 for i in range(nr_numbers):
     random_item = random.choice(numbers)
     total.append(random_item)
-
 print("The password is:", total)
-
-
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
-final = []
-total_length = int(len(total))
-
-for i in range(total_length):
-    random_item = random.choice(total)
-    final.append(random_item)
-
-final_password = "".join(final) # Convert the final list into a string
-
+random.shuffle(total) #This just shuffle this TOTAL list and not need to loop through and select one by one
+final_password = "".join(total) #This take list and add them in one string to look more nice.
 print("Final password is: ", final_password)
